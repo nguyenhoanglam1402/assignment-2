@@ -11,15 +11,13 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
-    
+
     <title>Login #5</title>
 
-    <?php include 'connect.php';?>
 
   </head>
   <body>
-  
-
+  <?php include 'connect.php';?>
   <div class="d-md-flex half">
     <div class="bg" style="background-image: url('images/bg_1.jpg');"></div>
     <div class="contents">
