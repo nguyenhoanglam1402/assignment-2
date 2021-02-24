@@ -11,7 +11,11 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Style -->
     <link rel="stylesheet" href="css/style.css">
+    
     <title>Login #5</title>
+
+    <?php include 'connect.php';?>
+
   </head>
   <body>
   
