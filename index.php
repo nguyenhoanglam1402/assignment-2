@@ -17,7 +17,6 @@
 
   </head>
   <body>
-  <?php include 'connect.php';?>
   <div class="d-md-flex half">
     <div class="bg" style="background-image: url('images/bg_1.jpg');"></div>
     <div class="contents">
@@ -64,15 +63,11 @@
         </div>
       </div>
     </div>
-
-    
   </div>
-    
-    
-
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/main.js"></script>
+  <?php include 'connect.php';?>
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
   </body>
 </html>
