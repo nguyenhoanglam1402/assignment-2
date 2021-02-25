@@ -4,7 +4,7 @@
         $databaseConnect = pg_connect($connectString);
         $_SESSION["databaseConnect"] = $databaseConnect;
         echo '<script>alert("Connect Successfully");</script>';
-        echo '<script>alert("'.$_SESSION["databaseConnect"].'");</script>'
+        echo '<script>alert("'.$_SESSION["databaseConnect"].'");</script>';
     }
     catch(PDOException $exception){
         echo $exception->getMessage();
