@@ -6,7 +6,7 @@
             if($_POST["username"] != "" && $_POST['password'] != ""){
                 $username = $_POST['username'];
                 $password = $_POST['password'];
-                $query = "SELECT is_admin FROM users WHERE username = '".pg_escape_string($username)."'AND passwords= '".pg_escape_string($password)"'";
+                $query = "SELECT is_admin FROM users";
                 $data = pg_query($databaseConnect,$query); 
                 $login_check = pg_num_rows($data);
                 if($login_check > 0){
