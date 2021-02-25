@@ -2,8 +2,8 @@
     $connectString = "pgsql:host=ec2-3-95-85-91.compute-1.amazonaws.com;port=5432;dbname=dbjmg9ndaoiolh;user=buydnsimuwfwbm;password=44fa8e498c06f1c49d67ea398602bcf0f140346a1486b97289102ddd8711eed6";
     try{
         $databaseConnect = pg_connect($connectString);
-        if(isset($_POST['submit'])){
-            if($_POST["username"] != null && $_POST['password'] != null){
+        if(isset($_POST["submit"])){
+            if($_POST["username"] && $_POST["password"]){
                 $username = $_POST['username'];
                 $password = $_POST['password'];
                 $query = "SELECT is_admin FROM users WHERE username = '$username' AND passwords = '$password'";
@@ -20,7 +20,6 @@
         }else{
             echo '<script>alert("Connect fail !")</script>';
         }
-        pg_close($dbconn); 
     }
     catch(PDOException $exception){
         echo $exception->getMessage();
