@@ -6,9 +6,9 @@
             if($_POST["username"] != null && $_POST['password'] != null){
                 $username = $_POST['username'];
                 $password = $_POST['password'];
-                $query = "SELECT is_admin FROM users WHERE username = '$_POST["username"]' AND passwords = '$_POST["password"]'";
+                $query = "SELECT is_admin FROM users WHERE username = '$username' AND passwords = '$password'";
                 $data = pg_query($databaseConnect,$query); 
-                $login_check = pg_fetch_row($data);
+                $login_check = pg_num_row($data);
                 if($login_check > 0){
                     echo '<script>alert("Login successfully !")</script>';
                 }
