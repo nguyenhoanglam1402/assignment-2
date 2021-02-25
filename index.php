@@ -50,7 +50,7 @@
                   <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
                 </div>
 
-                <input type="submit" name="submit" value="Log In" class="btn btn-block py-2 btn-primary">
+                <input type="submit" name="submit" id="submit" value="Log In" class="btn btn-block py-2 btn-primary">
 
                 <span class="text-center my-3 d-block">or</span>
                 
