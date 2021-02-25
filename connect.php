@@ -3,7 +3,7 @@
     try{
         $databaseConnect = pg_connect($connectString);
         if(isset($_POST['submit'])){
-            if($_POST["username"] != "" && $_POST['password'] != ""){
+            if($_POST["username"] != null && $_POST['password'] != null){
                 $username = $_POST['username'];
                 $password = $_POST['password'];
                 $query = "SELECT is_admin FROM users";
