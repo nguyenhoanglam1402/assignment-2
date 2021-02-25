@@ -32,7 +32,7 @@
               <div class="text-center mb-5">
                 <h3 class="text-uppercase">Login to <strong>ATN MANAGEMENT</strong></h3>
               </div>
-              <form action="connect.php" method="POST">
+              <form action="connect.php" method="post">
                 <div class="form-group first">
                   <label for="username">Username</label>
                   <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username">
