@@ -3,7 +3,7 @@
     try{
         $databaseConnect = pg_connect($connectString);
         if(isset($_POST['submit'])){
-            if($_POST["username"] != null && $_POST['password'] != null){
+            if($_POST["username"] != "" && $_POST['password'] != ""){
                 $username = $_POST['username'];
                 $password = $_POST['password'];
                 $query = "SELECT is_admin FROM users WHERE username = ".pg_escape_string($username)."AND passwords= ".pg_escape_string($password)";";
@@ -18,7 +18,6 @@
             }
             
         }
-        echo '<script>alert("Connect Successfully");</script>';
     }
     catch(PDOException $exception){
         echo $exception->getMessage();
