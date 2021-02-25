@@ -8,7 +8,7 @@
                 $password = $_POST['password'];
                 $query = "SELECT is_admin FROM users WHERE username = '$username' AND passwords = '$password'";
                 $data = pg_query($databaseConnect,$query); 
-                $login_check = pg_num_row($data);
+                $login_check = pg_num_rows($data);
                 if($login_check > 0){
                     echo '<script>alert("Login successfully !")</script>';
                 }
@@ -18,10 +18,11 @@
             }
             
         }else{
-            echo '<script>alert("Connect fail !")</script>';
+            echo '<script>alert("Connect successfully !")</script>';
         }
     }
-    catch(PDOException $exception){
+    catch(Exception $exception){
+        echo '<script>alert("Connect fail !")</script>';
         echo $exception->getMessage();
     }
     
