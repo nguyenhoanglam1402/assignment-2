@@ -5,6 +5,7 @@
         $_SESSION["databaseConnect"] = $databaseConnect;
         echo '<script>alert("Connect Successfully");</script>';
         echo '<script>alert("'.$_SESSION["databaseConnect"].'");</script>';
+        echo '<script>alert("'.$_databaseConnect.'");</script>';
     }
     catch(PDOException $exception){
         echo $exception->getMessage();
