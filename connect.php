@@ -10,7 +10,7 @@
                 $data = pg_query($databaseConnect,$query); 
                 $login_check = pg_num_rows($data);
                 if($login_check > 0){
-                    echo '<script>alert("Login successfully !")</script>';
+                    echo '<script>alert("'.$login_check.'!")</script>';
                 }
                 else{
                     echo '<script>alert("Login fail !")</script>';
