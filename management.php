@@ -35,7 +35,7 @@
                 
                     <?php
                         if($result > 0){
-                            while ($row_data < pg_fetch_assoc($result)){
+                            while ($row_data == pg_fetch_assoc($result)){
                     ?>
                     <tr>
                         <th scope="row"><?php echo $row_data["cid"];?></th>
