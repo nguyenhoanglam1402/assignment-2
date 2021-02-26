@@ -5,7 +5,7 @@
         echo '<script>alert("Connect successfully !")</script>'
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $query = "SELECT is_admin FROM users WHERE username = $username AND passwords = $password";
+        $query = "SELECT * FROM users WHERE username = '$username' AND passwords = '$password'";
         $data = pg_query($databaseConnect,$query);
         $login_check = pg_num_rows($data);
         if($login_check == 1){
@@ -18,4 +18,5 @@
     else{
         echo '<script>alert("Connect fail !")</script>'
     }
+    pg_close($account);
 ?>
