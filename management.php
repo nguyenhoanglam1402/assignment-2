@@ -18,7 +18,7 @@
         <th scope="col">Product Inventory</th>
     </thead>
     <tbody>
-        <?php include "fetch_data.php"?>
+        <?php include 'fetch_data.php';?>
     </tbody>
     </table>
     <!-- Optional JavaScript -->
