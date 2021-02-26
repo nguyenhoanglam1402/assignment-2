@@ -3,7 +3,7 @@
     $databaseConnect = pg_connect($connectString);
     $username = $_POST['username'];
     $password = $_POST['password'];
-    //$query = "SELECT is_admin FROM users WHERE username = '$username' AND passwords = '$password'";
+    $query = "SELECT is_admin FROM users WHERE username = '$username' AND passwords = '$password';";
     //$data = pg_query($databaseConnect,$query); 
     //$login_check = pg_num_rows($data);
     header('Location: /management.php');
