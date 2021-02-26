@@ -6,11 +6,10 @@
     $query = "SELECT is_admin FROM users WHERE username = '$username' AND passwords = '$password';";
     $data = pg_query($databaseConnect,$query);
     $login_check = pg_num_rows($data);
-    if($login_check > 0){
+    if($login_check === 1){
         header('Location: /management.php');
     }
     else{
         header('Location : /index.php');
     }
-    
 ?>
