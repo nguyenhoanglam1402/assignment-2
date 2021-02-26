@@ -40,7 +40,7 @@
                     <tr>
                         <th scope="row"><?php echo $row_data["cid"];?></th>
                         <td><?php echo $row_data["product_name"];?></td>
-                        <td><?php echo $row_data["price"];?></td>
+                        <td><p>$ </p><?php echo $row_data["price"];?></td>
                         <td><?php echo $row_data["amount"];?></td>
                     </tr>
                     <?php
