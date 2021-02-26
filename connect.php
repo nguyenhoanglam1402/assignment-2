@@ -14,7 +14,7 @@
         if ($count == 1) {
           session_start();
           $_SESSION["username"] = $username;
-          header('Location: /productform.php');
+          header('Location: /management.php');
         } else {
           echo ("Wrong username or password. Please try again!") . pg_errormessage($query);
           header('refresh: 2; url=/index.php'); //wrong reset
