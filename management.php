@@ -11,14 +11,24 @@
   </head>
   <body>
   <?php 
+			echo '<p>TEST HEROKU POSTGRESQL DATABASE </p>'; 
+			# Heroku credential 
+            $host = "ec2-3-95-85-91.compute-1.amazonaws.com";
+            $port = "5432";
+            $dbname = "dbjmg9ndaoiolh";
+            $user = "buydnsimuwfwbm";
+            $password = "44fa8e498c06f1c49d67ea398602bcf0f140346a1486b97289102ddd8711eed6"; 
+			# Create connection to Heroku Postgres
+			$conn_string = "host=$host_heroku port=5432 dbname=$db_heroku user=$user_heroku password=$pw_heroku";
+			$pg_heroku = pg_connect($conn_string);
 			
 			if (!$pg_heroku)
 			{
 				die('Error: Could not connect: ' . pg_last_error());
 			}
 			# Get data by query
-			$query = 'select * from test_lab6';
-			$result = pg_query($query);
+			$query = 'select * from category';
+			$result = pg_query($pg_heroku, $query);
 			# Display data column by column
 			$i = 0;
 			echo '<html><body><table><tr>';
