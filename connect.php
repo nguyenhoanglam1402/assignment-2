@@ -5,7 +5,7 @@
       } else {      
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $query = "SELECT * FROM staff WHERE username = '$username' AND \"passwords\" = '$password'";
+        $query = "SELECT * FROM users WHERE username = '$username' AND \"passwords\" = '$password'";
         $result = pg_query($account, $query);
         $count = pg_num_rows($result);
         if ($count == 1) {
