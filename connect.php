@@ -6,7 +6,7 @@
       } else {      
         $username = $_POST['username'];
         $password = $_POST['password'];
-        $query = "SELECT * FROM users WHERE username = '$username' AND \"passwords\" = '$password'";
+        $query = "SELECT is_admin FROM users WHERE username = ".pg_escape_string($username)."AND passwords= ".pg_escape_string($password)";";
         $result = pg_query($account, $query);
         $count = pg_num_rows($result);
         if ($count == 1) {
