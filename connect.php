@@ -12,12 +12,11 @@
       $data = pg_query($dbconn,$sql); 
       $login_check = pg_num_rows($data);
       if($login_check > 0){ 
-        echo "Login Successfully";
-        pg_close($dbconn);
+        echo "Login Successfully".$dbconn;
         header('Location: /management.php');  
       }else{
-        pg_close($dbconn);
         echo "Invalid Details";
       }
   }
+  pg_close($dbconn);
 ?>
