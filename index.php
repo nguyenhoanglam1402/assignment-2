@@ -1,57 +1,76 @@
-<html>
-	<head>
-		<title>PHP Test</title>
-	</head>
-	<body>
-		<?php 
-			echo '<p>TEST HEROKU POSTGRESQL DATABASE </p>'; 
-			# Heroku credential 
-			$host_heroku = "ec2-18-206-84-251.compute-1.amazonaws.com";
-			$db_heroku = "d8k42dnhtd0o9i";
-			$user_heroku = "crmjpgdtqgprga";
-			$pw_heroku = "0d86d0fb5f24be75ffb6728bb2ffaa6762b75489e8923fda3cdf71c519a99d67";
-			# Create connection to Heroku Postgres
-			$conn_string = "host=$host_heroku port=5432 dbname=$db_heroku user=$user_heroku password=$pw_heroku";
-			$pg_heroku = pg_connect($conn_string);
-			
-			if (!$pg_heroku)
-			{
-				die('Error: Could not connect: ' . pg_last_error());
-			}
-			# Get data by query
-			$query = 'select * from test_lab6';
-			$result = pg_query($pg_heroku, $query);
-			# Display data column by column
-			$i = 0;
-			echo '<html><body><table><tr>';
-			while ($i < pg_num_fields($result))
-			{
-				$fieldName = pg_field_name($result, $i);
-				echo '<td>' . $fieldName . '</td>';
-				$i = $i + 1;
-			}
-			echo '</tr>';
-			# Display data row by row
-			$i = 0;
-			while ($row = pg_fetch_row($result)) 
-			{
-				echo '<tr>';
-				$count = count($row);
-				$y = 0;
-				while ($y < $count)
-				{
-					$c_row = current($row);
-					echo '<td>' . $c_row . '</td>';
-					next($row);
-					$y = $y + 1;
-				}
-				echo '</tr>';
-				$i = $i + 1;
-			}
-			pg_free_result($result);
 
-			echo '</table></body></html>';
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <link rel="stylesheet" href="css/owl.carousel.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- Style -->
+    <link rel="stylesheet" href="css/style.css">
 
-		?> 
-	</body>
+    <title>Login #5</title>
+
+
+  </head>
+  <body>
+  <div class="d-md-flex half">
+    <div class="bg" style="background-image: url('images/bg_1.jpg');"></div>
+    <div class="contents">
+
+      <div class="container">
+        <div class="row align-items-center justify-content-center">
+          <div class="col-md-12">
+            <div class="form-block mx-auto">
+              <div class="text-center mb-5">
+                <h3 class="text-uppercase">Login to <strong>ATN MANAGEMENT</strong></h3>
+              </div>
+              <form action="/connect.php" method="post">
+                <div class="form-group first">
+                  <label for="username">Username</label>
+                  <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username">
+                </div>
+
+                <div class="form-group last mb-3">
+                  <label for="password">Password</label>
+                  <input type="password" class="form-control" placeholder="Your Password" id="password">
+                </div>
+                
+                <div class="d-sm-flex mb-5 align-items-center">
+                  <label class="control control--checkbox mb-3 mb-sm-0"><span class="caption">Remember me</span>
+                    <input type="checkbox" checked="checked"/>
+                    <div class="control__indicator"></div>
+                  </label>
+                  <span class="ml-auto"><a href="#" class="forgot-pass">Forgot Password</a></span> 
+                </div>
+
+                <input type="submit" name="submit" id="submit" value="Log In" class="btn btn-block py-2 btn-primary">
+
+                <span class="text-center my-3 d-block">or</span>
+                
+                <div class="">
+                  
+                <a href="#" class="btn btn-block py-2 btn-facebook">
+                  <span class="icon-facebook mr-3"></span> Login with facebook
+                </a>
+
+                <a href="#" class="btn btn-block py-2 btn-google"><span class="icon-google mr-3"></span> Login with Google</a>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <?php include 'connect.php';?>
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
 </html>
