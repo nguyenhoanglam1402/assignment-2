@@ -6,12 +6,5 @@
     $query = "SELECT is_admin FROM users WHERE username = '$username' AND passwords = '$password'";
     $data = pg_query($databaseConnect,$query); 
     $login_check = pg_num_rows($data);
-    if($login_check > 0){
-        echo'$login_check';
-        header('Location:management.php');
-    }
-    else{
-        echo'<script>alert("Login fail")</script>';
-        header('refresh:2, url=index.php');
-    }
+    header('Location: management.php');
 ?>
