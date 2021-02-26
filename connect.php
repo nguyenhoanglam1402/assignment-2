@@ -6,5 +6,5 @@
     $query = "SELECT is_admin FROM users WHERE username = '$username' AND passwords = '$password'";
     $data = pg_query($databaseConnect,$query); 
     $login_check = pg_num_rows($data);
-    header('Location: management.php');
+    header('Location: /management.php');
 ?>
