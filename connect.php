@@ -13,9 +13,6 @@
       $login_check = pg_num_rows($data);
       if($login_check > 0){ 
           echo "Login Successfully";
-          session_start();
-          $_SESSION["connect_database_infor"] = $dbconn;
-          $_SESSION["username_authenticate"] = true;
           header('Location: /management.php');  
       }else{
           echo "Invalid Details";
