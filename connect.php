@@ -8,10 +8,10 @@
     $login_check = pg_num_rows($data);
     if($login_check > 0){
         echo'$login_check';
-        header('Location:/management.php');
+        header('Location:management.php');
     }
     else{
         echo'<script>alert("Login fail")</script>';
-        header('refresh:2, url=/index.php');
+        header('refresh:2, url=index.php');
     }
 ?>
