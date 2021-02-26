@@ -37,6 +37,7 @@
                   <label for="username">Username</label>
                   <input type="text" class="form-control" placeholder="your-email@gmail.com" id="username">
                 </div>
+
                 <div class="form-group last mb-3">
                   <label for="password">Password</label>
                   <input type="password" class="form-control" placeholder="Your Password" id="password">
@@ -54,11 +55,12 @@
 
                 <span class="text-center my-3 d-block">or</span>
                 
-                
                 <div class="">
+                  
                 <a href="#" class="btn btn-block py-2 btn-facebook">
                   <span class="icon-facebook mr-3"></span> Login with facebook
                 </a>
+
                 <a href="#" class="btn btn-block py-2 btn-google"><span class="icon-google mr-3"></span> Login with Google</a>
                 </div>
               </form>
