@@ -1,4 +1,3 @@
-
 <?php
   $host = "ec2-3-95-85-91.compute-1.amazonaws.com";
   $port = "5432";
@@ -14,7 +13,8 @@
       $data = pg_query($dbconn,$sql); 
       $login_check = pg_num_rows($data);
       if($login_check > 0){ 
-          echo "Login Successfully";    
+          echo "Login Successfully";
+          header('Location: /management.php');  
       }else{
           echo "Invalid Details";
       }

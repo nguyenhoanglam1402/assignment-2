@@ -10,10 +10,9 @@
 </head>
 <body>
 <div class="container">
-  <h2>Login Here </h2>
+  <h2>Login ATN Management System Here </h2>
   <form action="connect.php" method="post">
   
-     
     <div class="form-group">
       <label for="email">Email:</label>
       <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
