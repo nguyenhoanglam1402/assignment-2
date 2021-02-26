@@ -4,8 +4,8 @@
     if ($account === false) {
         die("ERROR: Could not connect to the database server!");
       } else {      
-        $username = $_POST['username'];
-        $password = $_POST['password'];
+        $username = 'lamnhgcd191296@fpt.edu.vn';
+        $password = 'lam1234+56789';
         $query = "SELECT is_admin FROM users WHERE username = ".pg_escape_string($username)."AND passwords= ".pg_escape_string($password)";";
         $result = pg_query($account, $query);
         $count = pg_num_rows($result);
