@@ -1,22 +1,22 @@
+
 <?php
-    $connectString = "host=ec2-3-95-85-91.compute-1.amazonaws.com dbname=dbjmg9ndaoiolh port=5432 user=buydnsimuwfwbm password=44fa8e498c06f1c49d67ea398602bcf0f140346a1486b97289102ddd8711eed6 sslmode=require";
-    $account = pg_connect($connectString);
-    if ($account === false) {
-        die("ERROR: Could not connect to the database server!");
-      } else {      
-        $username = 'lamnhgcd191296@fpt.edu.vn';
-        $password = 'lam1234+56789';
-        $query = "SELECT is_admin FROM users WHERE username = ".pg_escape_string($username)."AND passwords= ".pg_escape_string($password)";";
-        $result = pg_query($account, $query);
-        $count = pg_num_rows($result);
-        if ($count == 1) {
-          session_start();
-          $_SESSION["username"] = $username;
-          header('Location: /management.php');
-        } else {
-          echo ("Wrong username or password. Please try again!") . pg_errormessage($query);
-          header('refresh: 2; url=/index.php'); //wrong reset
-        }
+  $host = "ec2-3-95-85-91.compute-1.amazonaws.com";
+  $port = "5432";
+  $dbname = "dbjmg9ndaoiolh";
+  $user = "buydnsimuwfwbm";
+  $password = "44fa8e498c06f1c49d67ea398602bcf0f140346a1486b97289102ddd8711eed6"; 
+  $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
+  $dbconn = pg_connect($connection_string);
+  if(isset($_POST['submit'])&&!empty($_POST['submit'])){
+      
+      $hashpassword = $_POST['pwd'];
+      $sql ="select is_admin from users where username = '".pg_escape_string($_POST['email'])."' and passwords ='".$hashpassword."'";
+      $data = pg_query($dbconn,$sql); 
+      $login_check = pg_num_rows($data);
+      if($login_check > 0){ 
+          echo "Login Successfully";    
+      }else{
+          echo "Invalid Details";
       }
-      pg_close($account);
+  }
 ?>
