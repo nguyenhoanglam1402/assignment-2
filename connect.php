@@ -24,6 +24,8 @@
   function logout(){
     session_destroy();
     header('Location: /index.php');
+    echo '<script>alert("Log out successfully !");</script>';
   }
+  
   pg_close($dbconn);
 ?>
