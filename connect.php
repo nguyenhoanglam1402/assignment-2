@@ -16,6 +16,7 @@
         session_start();
         $_SESSION['authenticate_user'] = true;
         $_SESSION['permission_auth'] = $permission;
+        session_write_close();
         echo '<script>alert("Login Successfully'.$_SESSION['permission_auth'].'");</script>';
         echo '<script>console.log("'.$_SESSION['permission_auth'] = $permission.';</script>';
         header('Location: /management.php');  
