@@ -11,20 +11,22 @@
 <body>
   <div class="container">
     <div class="row justify-content-md-center">
-      <h2>Login ATN Management System Here </h2>
-      <form action="connect.php" method="post">
-      
-        <div class="form-group">
-          <label for="email">Email:</label>
-          <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
-        </div>
-        <div class="form-group">
-          <label for="pwd">Password:</label>
-          <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
-        </div>
+      <div class="col-md-auto">
+        <h2>Login ATN Management System Here </h2>
+        <form action="connect.php" method="post">
         
-        <input type="submit" name="submit" class="btn btn-primary" value="Submit">
-      </form>
+          <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" class="form-control" id="email" placeholder="Enter email" name="email">
+          </div>
+          <div class="form-group">
+            <label for="pwd">Password:</label>
+            <input type="password" class="form-control" id="pwd" placeholder="Enter password" name="pwd">
+          </div>
+          
+          <input type="submit" name="submit" class="btn btn-primary" value="Submit">
+        </form>
+      </div>
     </div>
   </div>
 </body>
