@@ -11,7 +11,7 @@
         $product_sold = $_POST['sold'];
         $product_inventory = $_POST['product-inventory'];
         $product_revenue = $_POST['product-revenue'];
-        $query = "update category set(revenue, amount, product_sold) = ($product_revenue, $product_inventory, $product_sold) where cid = $product_id";
+        $query = "update category set(revenue, amount, product_sold) = (".$product_revenue.", ".$product_inventory.", ".$product_sold.") where cid = ".$product_id;
         $result = pg_query($dbconn, $query);
         if($result){
             echo 'Updated successfully !';
