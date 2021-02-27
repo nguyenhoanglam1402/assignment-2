@@ -15,10 +15,10 @@
         $condition = array('cid' => $product_id);
         $result = pg_update($dbconn, 'category', $data_to_update, $product_id);
         if($result){
-            echo '<script>alert("Updated successfully !");</script>';
+            echo 'Updated successfully !';
         }
         else{
-            echo '<script>alert("Updated unsuccessfully !");</script>';
+            echo 'Updated unsuccessfully !';
         }
     }
 ?>
