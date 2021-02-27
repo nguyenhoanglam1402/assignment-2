@@ -17,6 +17,7 @@
         $_SESSION['authenticate_user'] = true;
         $_SESSION['permission_auth'] = $permission;
         echo '<script>alert("Login Successfully'.$_SESSION['permission_auth'].'");</script>';
+        echo '<script>console.log("'.$_SESSION['permission_auth'] = $permission.';</script>';
         header('Location: /management.php');  
       }else{
         echo "Invalid Details";
