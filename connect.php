@@ -20,5 +20,10 @@
         echo "Invalid Details";
       }
   }
+
+  function logout(){
+    session_destroy();
+    header('Location: /index.php');
+  }
   pg_close($dbconn);
 ?>
