@@ -27,7 +27,7 @@
         <form action="logout.php" method = "post">
           <button type="button" class="btn btn-primary btn-sm" id="logout-button">Log out</button>
         </form>
-        <table class="table-striped table-primary">
+        <table class="table table-striped table-primary">
             <thead>
                 <tr class="table-primary">
                 <th scope="col">PRODUCT ID</th>
