@@ -11,7 +11,7 @@
         $product_sold = $_GET['sold'];
         $product_inventory = $_GET['product-inventory'];
         $product_revenue = $_GET['product-revenue'];
-        $data_to_update = array('revenue' => $product_revenue, 'sold' => $product_sold, 'amount' => $product_inventory);
+        $data_to_update = array('revenue' => $product_revenue, 'product_sold' => $product_sold, 'amount' => $product_inventory);
         $condition = array('cid' => $product_id);
         $result = pg_update($dbconn, 'category', $data_to_update, $condition);
         if($result){
