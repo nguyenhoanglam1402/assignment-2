@@ -23,9 +23,9 @@
   </head>
   <body>
     <div class="container">
-        <h1 style = "text-align: center;">ATN Management Dashboard</h1>
-        <form action="logout.php" method = "post">
-          <button type="button" class="btn btn-primary btn-sm" id="logout-button">Log out</button>
+        <h1 style = "text-align: center; margin-top: 10px;">ATN Management Dashboard</h1>
+        <form action="/logout.php" method = "POST">
+          <button style="margin-bottom: 10px;" type="button" class="btn btn-primary btn-sm" id="logout-button" name="logout-button">Log out</button>
         </form>
         <table class="table table-striped table-primary">
             <thead>
@@ -48,7 +48,7 @@
                         <td class="table-primary" ><?php echo $row_data["product_name"];?></td>
                         <td class="table-primary">$ <?php echo $row_data["price"];?></td>
                         <td class="table-primary"><?php echo $row_data["amount"];?></td>
-                        <td class="table-primary">$ <?php echo $row_data["profit"];?></td>
+                        <td class="table-primary">$ <?php echo $row_data["revenue"];?></td>
                         <td class="table-primary"><?php echo $row_data["quality_sold"];?></td>
                     </tr>
                     <?php

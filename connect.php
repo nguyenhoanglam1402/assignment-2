@@ -15,7 +15,12 @@
       if($login_check > 0){ 
         $_SESSION['authenticate_user'] = true;
         $_SESSION['permission_auth'] = $permission;
-        header('Location: /management.php');  
+        if($permission == true){
+          header('Location: /management.php');
+        }
+        else{
+          header('Location: /shopmanagerpage.html');
+        }  
       }else{
         echo "Invalid Details";
       }

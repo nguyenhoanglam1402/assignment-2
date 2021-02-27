@@ -1,4 +1,15 @@
 $<!doctype html>
+<?php
+  $host = "ec2-3-95-85-91.compute-1.amazonaws.com";
+  $port = "5432";
+  $dbname = "dbjmg9ndaoiolh";
+  $user = "buydnsimuwfwbm";
+  $password = "44fa8e498c06f1c49d67ea398602bcf0f140346a1486b97289102ddd8711eed6"; 
+  $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
+  $dbconn = pg_connect($connection_string);
+  $query = "select * from category";
+  $result = pg_query($dbconn,$query);
+?>
 <html lang="en">
   <head>
     <title>UPDATE FORM</title>
@@ -10,23 +21,29 @@ $<!doctype html>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-      <h1>UPDATE PRODUCT STATUS</h1>
+      <h1 style="text-align: center;">UPDATE PRODUCT STATUS</h1>
       <div class="row justify-content-md-center">
-        <form>
-            <div class="mb-3">
-              <label class="form-label">Product ID</label>
-              <input type="text" class="form-control">
-            </div>
-            <div class="mb-3">
-              <label class="form-label">Password</label>
-              <input type="password" class="form-control">
-            </div>
-            <div class="mb-3 form-check">
-              <input type="checkbox" class="form-check-input" id="exampleCheck1">
-              <label class="form-check-label" for="exampleCheck1">Check me out</label>
-            </div>
-            <button type="submit" class="btn btn-primary">Submit</button>
-          </form>
+          <div class="col-4">
+            <form action="update_data.php" method="POST">
+                <div class="mb-3">
+                  <label class="form-label">Product ID</label>
+                  <input type="number" class="form-control" name="product-id">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label">Sold</label>
+                  <input type="number" class="form-control" name="sold">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Inventoty</label>
+                    <input type="number" class="form-control" name="product-inventory">
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Revenue</label>
+                    <input type="number" class="form-control" name="product-revenue">
+                </div>
+                <button type="submit" class="btn btn-primary" name="submit" id="submit">Submit</button>
+              </form>
+          </div>
       </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

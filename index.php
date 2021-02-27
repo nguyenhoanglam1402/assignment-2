@@ -11,7 +11,7 @@
 <body>
   <div class="container">
     <div class="row justify-content-md-center">
-      <div class="col-md-auto">
+      <div class="col-6">
         <h2>Login ATN Management System Here </h2>
         <form action="connect.php" method="post">
         
