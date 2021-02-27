@@ -22,7 +22,7 @@
   </head>
   <body>
     <div class="container">
-        <h1><?php echo $_SESSION['permission_auth'];?> ATN Management Dashboard</h1>
+        <h1 style = "text-align: center;">ATN Management Dashboard</h1>
         <table class="table table-striped table-dark">
             <thead>
                 <tr>
