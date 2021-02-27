@@ -15,7 +15,7 @@
         $result = pg_query($dbconn, $query);
         if($result){
             echo '<script>alert("Updated successfully !");</script>';
-            header('Location: /updateform.php');
+            header('Location: /shopmanagerpage.html');
         }
         else{
             echo '<script>alert("Updated unsuccessfully !");</script>';
