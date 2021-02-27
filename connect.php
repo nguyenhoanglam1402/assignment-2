@@ -15,8 +15,6 @@
       if($login_check > 0){ 
         $_SESSION['authenticate_user'] = true;
         $_SESSION['permission_auth'] = $permission;
-        die echo '<script>alert("Login Successfully'.$permission.'");</script>';
-        echo '<script>console.log("'.$permission.';</script>';
         header('Location: /management.php');  
       }else{
         echo "Invalid Details";
