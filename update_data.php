@@ -11,9 +11,9 @@
         $product_sold = $_POST['sold'];
         $product_inventory = $_POST['product-inventory'];
         $product_revenue = $_POST['product-revenue'];
-        $data_to_update = array('revenue' => $product_revenue, 'sold' => $product_sold, 'amount' => $product_inventory);
+        $data_to_update = array('revenue' => $product_revenue, 'quality_sold' => $product_sold, 'amount' => $product_inventory);
         $condition = array('cid' => $product_id);
-        $result = pg_update($dbconn, 'category', $data_to_update, $product_id);
+        $result = pg_update($dbconn, 'category', $data_to_update, $condition);
         if($result){
             echo 'Updated successfully !';
         }
