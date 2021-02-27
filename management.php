@@ -30,6 +30,8 @@
                 <th scope="col">PRODUCT NAME</th>
                 <th scope="col">PRODUCT PRICE</th>
                 <th scope="col">PRODUCT INVENTORY</th>
+                <th scope="col">PRODUCT PROFIT</th>
+                <th scope="col">QUANLITY SOLD<th>
                 </tr>
             </thead>
             <tbody>
