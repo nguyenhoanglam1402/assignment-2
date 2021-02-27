@@ -7,7 +7,7 @@
       $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
       $dbconn = pg_connect($connection_string) or die('Connect fail !');
       if(isset($_GET['submit'])&&!empty($_GET['submit'])){  
-        $query = "INSERT INTO category (product_name, price) VALUES ($_GET['product-name'], $_GET['product-price'])";
+        $query = "INSERT INTO category (product_name, price) VALUES ($_GET['product-name'], $_GET['product-price'])" or die('Query fail');
         $result = pg_query($dbconn, $query);
         if($result){
             echo '<script>alert("Added successfully !");</script>';
