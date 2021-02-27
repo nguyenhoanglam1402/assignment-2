@@ -11,13 +11,16 @@
         $product_sold = $_GET['sold'];
         $product_inventory = $_GET['product-inventory'];
         $product_revenue = $_GET['product-revenue'];
-        $query = 'UPDATE category SET quality_sold ='.$product_sold.', revenue = '.$product_revenue.', amount = '.$product_inventory.' where cid = '.$product_id.'';
+        $query = "UPDATE category SET quality_sold = $product_sold, revenue = $product_revenue, amount = $product_inventory where cid = $product_id";
         $result = pg_query($dbconn, $query);
         if($result){
-            echo '<script>alert("Updated successfully !")</script>';
+            echo '<script>alert("Updated successfully !");</script>';
+            header('Location: /updateform.php');
         }
         else{
-            echo '<script>alert("Updated unsuccessfully !")</script>';
+            echo '<script>alert("Updated unsuccessfully !");</script>';
+            header('Location: /updateform.php');
         }
+        pg_close($dbconn);
     }
 ?>
