@@ -15,7 +15,7 @@
         $_SESSION['authenticate_user'] = true;
         $_SESSION['permission_auth'] = $permission;
         while($permission = pg_fetch_row($data)){
-          if($permission[0] == "true"){
+          if($permission[0] === true){
             header('Location: /management.php');
           }
           else{
