@@ -11,8 +11,12 @@
       $sql ="select is_admin from users where username = '".pg_escape_string($_POST['email'])."' and passwords ='".$hashpassword."'";
       $data = pg_query($dbconn,$sql); 
       $login_check = pg_num_rows($data);
+      $permission = pg_fetch_row($data);
       if($login_check > 0){ 
-        echo "Login Successfully".$dbconn;
+        session_start();
+        $_SESSION['authenticate_user'] = true;
+        $_SESSION['permission_auth'] = $permission;
+        echo '<script>alert("Login Successfully'.$_SESSION['permission_auth'].'");</script>';
         header('Location: /management.php');  
       }else{
         echo "Invalid Details";

@@ -47,7 +47,7 @@
                             }
                         }
                         else{
-                            echo "<script>alert('Connect fail!');</script>" . pg_errormessage($query);
+                            echo "<script>alert('Fetch database fail !');</script>" . pg_errormessage($query);
                         }
                     ?>
             </tbody>
