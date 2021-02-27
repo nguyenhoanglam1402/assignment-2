@@ -14,11 +14,11 @@
         $query = "update category set(revenue, amount, product_sold) = (".$product_revenue.", ".$product_inventory.", ".$product_sold.") where cid = ".$product_id;
         $result = pg_query($dbconn, $query);
         if($result){
-            echo '<p>Updated successfully !</p>';
+            echo '<script>alert("Updated successfully !");</script>';
             header('Location: /updateform.php');
         }
         else{
-            echo '<p>Updated unsuccessfully !</p>';
+            echo '<script>alert("Updated unsuccessfully !");</script>';
             header('Location: /updateform.php');
         }
         pg_close($dbconn);
