@@ -6,8 +6,10 @@
       $password = "44fa8e498c06f1c49d67ea398602bcf0f140346a1486b97289102ddd8711eed6"; 
       $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
       $dbconn = pg_connect($connection_string) or die('Connect fail !');
-      if(isset($_GET['submit'])&&!empty($_GET['submit'])){  
-        $query = "INSERT INTO category (product_name, price) VALUES ($_GET['product-name'], $_GET['product-price'])" or die('Query fail');
+      if(isset($_GET['submit'])&&!empty($_GET['submit'])){ 
+        $product_name = $_GET['product-name'];
+        $product_price = $_GET['product-price'];
+        $query = "INSERT INTO category (product_name, price) VALUES ('$product_name', $product_price);" or die echo '<script>alert("Bad Query !");</script>';
         $result = pg_query($dbconn, $query);
         if($result){
             echo '<script>alert("Added successfully !");</script>';
