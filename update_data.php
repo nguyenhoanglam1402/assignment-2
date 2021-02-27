@@ -12,6 +12,6 @@
         $product_inventory = $_POST['product-inventory'];
         $product_revenue = $_POST['product-revenue'];
         $query = "update category set quality_sold =".$product_sold." , revenue = ".$product_revenue.", amount = ".$product_inventory."where cid =".$product_id.;
-        pg_query($dbconn,$query);
+        $result = pg_query($dbconn,$query);
     }
 ?>
