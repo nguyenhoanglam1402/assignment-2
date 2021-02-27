@@ -44,6 +44,8 @@
                         <td><?php echo $row_data["product_name"];?></td>
                         <td>$ <?php echo $row_data["price"];?></td>
                         <td><?php echo $row_data["amount"];?></td>
+                        <td>$ <?php echo $row_data["profit"];?></td>
+                        <td><?php echo $row_data["quality_sold"];?></td>
                     </tr>
                     <?php
                             }
