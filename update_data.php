@@ -11,9 +11,8 @@
         $product_sold = $_GET['sold'];
         $product_inventory = $_GET['product-inventory'];
         $product_revenue = $_GET['product-revenue'];
-        $data_to_update = array('revenue' => $product_revenue, 'product_sold' => $product_sold, 'amount' => $product_inventory);
-        $condition = array('cid' => $product_id);
-        $result = pg_update($dbconn, 'category', $data_to_update, $condition);
+        $query = 'UPDATE category SET quality_sold ='.$product_sold.', revenue = '.$product_revenue.', amount = '.$product_inventory.' where cid = '.$product_id.'';
+        $result = pg_query($dbconn, $query);
         if($result){
             echo '<script>alert("Updated successfully !")</script>';
         }
