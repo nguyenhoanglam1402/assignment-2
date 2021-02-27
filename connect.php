@@ -15,7 +15,7 @@
       if($login_check > 0){ 
         $_SESSION['authenticate_user'] = true;
         $_SESSION['permission_auth'] = $permission;
-        if($permission == true){
+        if($permission[0] == true){
           header('Location: /management.php');
         }
         else{
