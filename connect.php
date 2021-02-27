@@ -1,4 +1,5 @@
 <?php
+  session_start();
   $host = "ec2-3-95-85-91.compute-1.amazonaws.com";
   $port = "5432";
   $dbname = "dbjmg9ndaoiolh";
@@ -13,10 +14,8 @@
       $login_check = pg_num_rows($data);
       $permission = pg_fetch_row($data);
       if($login_check > 0){ 
-        session_start();
         $_SESSION['authenticate_user'] = true;
         $_SESSION['permission_auth'] = $permission;
-        session_write_close();
         echo '<script>alert("Login Successfully'.$_SESSION['permission_auth'].'");</script>';
         echo '<script>console.log("'.$_SESSION['permission_auth'] = $permission.';</script>';
         header('Location: /management.php');  
