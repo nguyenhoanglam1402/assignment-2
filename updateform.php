@@ -1,3 +1,13 @@
+<?php
+    $host = "ec2-3-95-85-91.compute-1.amazonaws.com";
+    $port = "5432";
+    $dbname = "dbjmg9ndaoiolh";
+    $user = "buydnsimuwfwbm";
+    $password = "44fa8e498c06f1c49d67ea398602bcf0f140346a1486b97289102ddd8711eed6"; 
+    $connection_string = "host={$host} port={$port} dbname={$dbname} user={$user} password={$password} ";
+    $dbconn = pg_connect($connection_string) or die('Connection fail !');
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -13,7 +23,7 @@
       <h1 style="text-align: center;">UPDATE PRODUCT STATUS</h1>
       <div class="row justify-content-md-center">
           <div class="col-4">
-            <form action="/update_data.php" method="POST">
+            <form action="/update_data.php" method="GET">
                 <div class="mb-3">
                   <label class="form-label">Product ID</label>
                   <input type="number" class="form-control" name="product-id" id = "product-id">
