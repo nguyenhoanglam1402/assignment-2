@@ -57,8 +57,8 @@
                     ?>
             </tbody>
         </table>
-        <form method = "post">
-          <button type="button" class="btn btn-primary btn-sm" id="logout-button">Log out</button>
+        <form action="connect.php" method = "post">
+          <button type="button" class="btn btn-primary btn-sm" onclick="logout()">Log out</button>
         </form>
     </div>
 
