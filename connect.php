@@ -1,5 +1,4 @@
 <?php
-  session_start();
   $host = "ec2-3-95-85-91.compute-1.amazonaws.com";
   $port = "5432";
   $dbname = "dbjmg9ndaoiolh";
@@ -16,7 +15,7 @@
       if($login_check > 0){ 
         $_SESSION['authenticate_user'] = true;
         $_SESSION['permission_auth'] = $permission;
-        echo '<script>alert("Login Successfully'.$permission.'");</script>';
+        die echo '<script>alert("Login Successfully'.$permission.'");</script>';
         echo '<script>console.log("'.$permission.';</script>';
         header('Location: /management.php');  
       }else{
