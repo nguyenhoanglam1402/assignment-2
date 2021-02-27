@@ -11,17 +11,16 @@
       $sql ="select is_admin from users where username = '".pg_escape_string($_POST['email'])."' and passwords ='".$hashpassword."'";
       $data = pg_query($dbconn,$sql); 
       $login_check = pg_num_rows($data);
+      $permission = pg_fetch_result($data,0,0);
       if($login_check > 0){ 
         $_SESSION['authenticate_user'] = true;
         $_SESSION['permission_auth'] = $permission;
-        while($permission = pg_fetch_row($data)){
-          if($permission[0] == "true"){
-            header('Location: /management.php');
-          }
-          else{
-            header('Location: /shopmanagerpage.html');
-          }  
+        if($permission == true){
+          header('Location: /management.php');
         }
+        else{
+          header('Location: /shopmanagerpage.html');
+        } 
       }else{
         echo "Invalid Details";
       }
