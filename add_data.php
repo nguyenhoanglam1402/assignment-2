@@ -9,7 +9,9 @@
       if(isset($_GET['submit'])&&!empty($_GET['submit'])){ 
         $product_name = $_GET['product-name'];
         $product_price = $_GET['product-price'];
-        $query = "INSERT INTO category (product_name, price) VALUES ('$product_name', $product_price);" or die echo '<script>alert("Bad Query !");</script>';
+        $product_inventory = $_GET['product-inventory'];
+        $query = "INSERT INTO category (product_name, price, amount, revenue, quality_sold) 
+        VALUES ('$product_name', $product_price, $product_inventory, 0, 0);" or die ("Bad Query !");
         $result = pg_query($dbconn, $query);
         if($result){
             echo '<script>alert("Added successfully !");</script>';
