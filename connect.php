@@ -18,7 +18,7 @@
         if($permission){
           header('Location: /management.php');
         }
-        else{
+        else if (!$permission){
           header('Location: /shopmanagerpage.html');
         } 
       }else{
