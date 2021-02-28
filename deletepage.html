@@ -1,27 +1,22 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <title>Shop Manager Page</title>
+    <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="js/style.css">
   </head>
   <body>
-      <div class="container">
-            <h1 style="text-align: center; font-family: 'Courier New', Courier, monospace;">
-                Wellcome to ATN Shop for Shop Manager
-            </h1>
-            <p style="text-align: center;">List of function</p>
-            <div class="button-group" style="margin: auto; width: min-content;">
-              <a class="btn btn-primary" href="updateform.php" role="button">UPDATE</a>
-              <a class="btn btn-primary" href="addpage.html" role="button">ADD</a>
-              <a class="btn btn-primary" href="deletepage.html" role="button">DELETE</a>
-            </div>
-      </div>
+    <form action="/add_data.php" method="GET">
+        <div class="mb-3">
+          <label class="form-label">Product ID</label>
+          <input type="text" class="form-control" name="product-name" id = "product-name">
+        </div>
+        <button type="submit" class="btn btn-danger" name="submit" id="submit" value = "Submit">Delete</button>
+    </form>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
