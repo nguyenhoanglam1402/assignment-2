@@ -10,13 +10,17 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   </head>
   <body>
-    <form action="/add_data.php" method="GET">
-        <div class="mb-3">
-          <label class="form-label">Product ID</label>
-          <input type="text" class="form-control" name="product-name" id = "product-name">
+    <div class="row justify-content-md-center">
+        <div class="col-4">
+            <form action="/delete_data.php" method="GET">
+                <div class="mb-3">
+                  <label class="form-label">Product ID</label>
+                  <input type="text" class="form-control" name="product-id" id = "product-id" required>
+                </div>
+                <button type="submit" class="btn btn-danger" name="submit" id="submit" value = "Submit">Delete</button>
+            </form>
         </div>
-        <button type="submit" class="btn btn-danger" name="submit" id="submit" value = "Submit">Delete</button>
-    </form>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
