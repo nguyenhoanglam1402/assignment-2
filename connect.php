@@ -16,7 +16,7 @@
         $_SESSION['authenticate_user'] = true;
         $_SESSION['permission_auth'] = $permission;
 
-        die echo $permission;
+        die(echo '<p>'.$permission.'</p>');
 
         if($permission){
           header('Location: /management.php');
