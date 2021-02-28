@@ -15,14 +15,10 @@
       if($login_check > 0){ 
         $_SESSION['authenticate_user'] = true;
         $_SESSION['permission_auth'] = $permission;
-
-        echo "$permission";
-        die("$permission");
-
-        if($permission){
+        if($permission == "t"){
           header('Location: /management.php');
         }
-        else if (!$permission){
+        else{
           header('Location: /shopmanagerpage.html');
         } 
       }else{
