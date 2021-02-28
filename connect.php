@@ -16,6 +16,7 @@
         $_SESSION['authenticate_user'] = true;
         $_SESSION['permission_auth'] = $permission;
 
+        echo "$permission";
         die("$permission");
 
         if($permission){
